@@ -1,39 +1,17 @@
 "use client"
 
-import { useState, useMemo, useEffect } from "react"
+import { useState, useMemo, Suspense } from "react"
 import { companies } from "@/lib/mock-data"
 import Input from "@/components/ui/Input"
 import Link from "next/link"
 import Select from "@/components/ui/Select"
-import { useRouter } from "next/navigation"
-import { useSearchParams } from "next/navigation"
+import SyncSearchParams from "@/components/SyncSearchParams"
 
 export default function CompaniesPage() {
-  const router = useRouter()
 
   const [search, setSearch] = useState("")
   const [sector, setSector] = useState("")
   const [scoreMin, setScoreMin] = useState(0)
-
-  const searchParams = useSearchParams()
-
-  useEffect(() => {
-    const sectorParam = searchParams.get("sector")
-    const scoreParam = searchParams.get("scoreMin")
-    const searchParam = searchParams.get("search")
-
-    if (searchParam) {
-      setSearch(searchParam)
-    }
-
-    if (sectorParam) {
-      setSector(sectorParam)
-    }
-
-    if (scoreParam) {
-      setScoreMin(Number(scoreParam))
-    }
-  }, [searchParams])
 
   const filtered = useMemo(() => {
     return companies.filter((c) => {
@@ -76,6 +54,15 @@ export default function CompaniesPage() {
 
   return (
     <div className="space-y-8">
+
+      <Suspense fallback={<div>Loading companies...</div>}>
+        <SyncSearchParams 
+          setSearch={setSearch} 
+          setSector={setSector} 
+          setScoreMin={setScoreMin} 
+        />
+      </Suspense>
+      
       <div>
         <h2 className="text-2xl font-semibold tracking-tight">
           Discover Companies
