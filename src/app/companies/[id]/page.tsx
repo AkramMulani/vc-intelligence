@@ -43,24 +43,16 @@ export default function CompanyProfilePage() {
     }
 
     function isInList(list: any) {
-      return list.companyIds.includes(company.id)
-    }
-
-    function updateSelectedList(value: string) {
-      setSelectedList(value)
-
-      if (value !== "") {
-        addToList(value)
-      }
+      return list.companyIds.includes(company?.id)
     }
 
     function addToList(listId: string) {
       const updatedLists = lists.map((list) => {
         if (list.id === listId) {
-          if (!list.companyIds.includes(company.id)) {
+          if (!list.companyIds.includes(company?.id)) {
             return {
               ...list,
-              companyIds: [...list.companyIds, company.id]
+              companyIds: [...list.companyIds, company?.id]
             }
           }
         }
