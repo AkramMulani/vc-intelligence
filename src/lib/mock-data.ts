@@ -8,7 +8,8 @@ export const companies: Company[] = [
     sector: "AI SaaS",
     stage: "Seed",
     location: "US",
-    tags: ["AI", "Automation", "Workflow"]
+    tags: ["AI", "Automation", "Workflow"],
+    score: 85
   },
   {
     id: "2",
@@ -17,7 +18,8 @@ export const companies: Company[] = [
     sector: "Fintech",
     stage: "Series A",
     location: "UK",
-    tags: ["Finance", "B2B", "API"]
+    tags: ["Finance", "B2B", "API"],
+    score: 75
   },
   {
     id: "3",
@@ -26,7 +28,8 @@ export const companies: Company[] = [
     sector: "HealthTech",
     stage: "Pre-Seed",
     location: "India",
-    tags: ["Healthcare", "AI", "Data"]
+    tags: ["Healthcare", "AI", "Data"],
+    score: 65
   },
   {
     id: "4",
@@ -35,7 +38,8 @@ export const companies: Company[] = [
     sector: "IT Services",
     stage: "Series B",
     location: "India",
-    tags: ["Software Development", "IT Services", "Consulting"]
+    tags: ["Software Development", "IT Services", "Consulting"],
+    score: 70
   },
   {
     id: "5",
@@ -44,7 +48,8 @@ export const companies: Company[] = [
     sector: "IT Services",
     stage: "Series B",
     location: "India",
-    tags: ["Software Development", "IT Services", "Consulting"]
+    tags: ["Software Development", "IT Services", "Consulting"],
+    score: 75
   },
   {
     id: "6",
@@ -53,6 +58,7 @@ export const companies: Company[] = [
     sector: "Job Portal",
     stage: "Seed",
     location: "US",
-    tags: ["Internships", "Job Portal", "Education"]
+    tags: ["Internships", "Job Portal", "Education"],
+    score: 60
   }
 ]
