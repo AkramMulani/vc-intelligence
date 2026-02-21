@@ -185,7 +185,7 @@ export default function ListsPage() {
                       className="flex justify-between items-center p-4 text-sm"
                     >
                       <div>
-                        <p className="font-medium">
+                        <p className="text-gray-900 font-medium">
                           {company.name}
                         </p>
                         <p className="text-gray-500">
